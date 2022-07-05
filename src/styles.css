@@ -12,6 +12,10 @@
   max-width: 500px;
 }
 
+h1{
+ text-align:center; 
+}
+
 form button {
   background-color: black;
   color: white;
@@ -25,7 +29,8 @@ form input {
   width: 250px;
 }
 form {
-  margin-bottom: 25px;
+  margin: auto auto 25px;
+  width: fit-content;
 }
 
 span {
