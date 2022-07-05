@@ -1,0 +1,33 @@
+.App {
+  font-family: sans-serif;
+  text-align: left;
+}
+
+.note {
+  background-color: #efefef;
+  border-radius: 5px;
+  padding: 2px;
+  padding-left: 20px;
+  margin: auto auto 10px auto;
+  max-width: 500px;
+}
+
+form button {
+  background-color: black;
+  color: white;
+  height: 30px;
+  margin-left: 20px;
+  border-radius: 4px;
+}
+
+form input {
+  height: 25px;
+  width: 250px;
+}
+form {
+  margin-bottom: 25px;
+}
+
+span {
+  color: red;
+}
