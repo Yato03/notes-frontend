@@ -24,8 +24,14 @@ form input {
   height: 25px;
   width: 250px;
 }
+
+h1 {
+  text-align: center;
+}
+
 form {
-  margin-bottom: 25px;
+  margin: auto auto 25px;
+  width: fit-content;
 }
 
 span {
