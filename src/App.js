@@ -8,7 +8,9 @@ export default function App() {
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newNote, setNewNote] = useState("");
+  const [important, setImportant] = useState(false);
 
+  //coger las notas
   useEffect(() => {
     setLoading(true);
     getAllNotes().then((data) => {
@@ -21,10 +23,16 @@ export default function App() {
     setNewNote(e.target.value);
   };
 
+  const handleOnChangeImportant = (e) => {
+    //console.log(e.target.checked);
+    setImportant(e.target.checked);
+  };
+
+  //crear nota
   const handleOnSubmit = (e) => {
     e.preventDefault();
     console.log(newNote);
-    postNote(newNote).then((res) => {
+    postNote(newNote, important).then((res) => {
       setNotes(notes.concat(res));
     });
     setNewNote("");
@@ -40,9 +48,18 @@ export default function App() {
           onChange={handleOnChangeNote}
           value={newNote}
         />
+        <label>
+          <input type="checkbox" onChange={handleOnChangeImportant} />
+          important
+        </label>
+
         <button onClick={handleOnSubmit}>New note</button>
       </form>
-      {loading ? "Loading..." : notes.map((n) => <Note key={n.id} note={n} />)}
+      {loading
+        ? "Loading..."
+        : notes.map((n) => (
+            <Note key={n.id} note={n} setNotes={setNotes} notes={notes} />
+          ))}
     </div>
   );
 }

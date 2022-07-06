@@ -1,8 +1,8 @@
-const postNote = (note) => {
+const postNote = (note, important) => {
   return fetch("https://obscure-thicket-82350.herokuapp.com/api/notes", {
     method: "POST",
     body: JSON.stringify({
-      important: true,
+      important: important || false,
       content: note
     }),
     headers: {
